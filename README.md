@@ -32,7 +32,7 @@ const errorMapping = {
     }
  */
 
-// 
+// use middleware
 f2.use(
     errorhandler(
         // error code or message path of `body`
