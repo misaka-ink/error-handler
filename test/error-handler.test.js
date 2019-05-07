@@ -8,7 +8,7 @@ import errorhandler from '../lib/index'
 import fetch2 from '@misaka.ink/fetch2'
 
 const mapKV = {
-    10001: 'error'
+    100001: 'error message of 100001'
 }
 
 // fetch2
@@ -30,7 +30,7 @@ app.use(async (ctx, next) => {
 
 app.use(async ctx => {
     ctx.body = {
-        code: 10001
+        code: 100001
     }
 })
 
@@ -48,14 +48,13 @@ afterAll(async done => {
     done()
 })
 
-describe('use fetch2 doT-template middleware', function () {
-    test('should return html code of the user template with username', async () => {
+describe('use fetch2 error-handler middleware', function () {
+    test('should return mapping error message when processing error', async () => {
         try {
             const result = await f2.request('http://localhost:3000/test')
-            console.log(result)
-            // return expect(result).toEqual('<h1>Hello Mine, here is user template</h1>')
+            return expect(result).toEqual(mapKV['100001'])
         } catch (e) {
-            console.log('草')
+            console.log(e)
             throw e
         }
     })
