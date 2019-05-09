@@ -3,16 +3,16 @@ dist: trusty
 language: node_js
 node_js: v10
 install:
-  - npm i
+- npm i
 script:
-  - npm test
-  - npm run build
+- npm test
+- npm run build
 deploy:
   provider: npm
   email: smilingxinyi@gmail.com
   skip_cleanup: true
   api_key:
-    secure: KenWvBxTdozWUstY88Vw+C6t4/MQsNtkAwYDwfdTcz+rG8/dNYJCA/LkbAGgvv8vaW/HJvbX0AwOaD4Uiv8twW5f0gLQZij5aGI4HYMB7csihxUkTrvkNa4dZrN6GhppAdRSAa3xjp4+krg4c+RA1uzigtDcirWRbnfqSpRYfAoRaEtIKxJviXTO7DBf2rablBwCVuIbmG5GY9dQ1trAcv040bF2VbYbK9X7lCWlnON6bv/hdZDp5qMUHIdb2CK6IvklJZM0Fta+/xFb1W6PrEC9a5MYsdCP76lOYVUw5agbyR21g3a+4mcpAUdwAiooWMr0+aTqKIkEXEAL7wuzbkNj7EbPV2QUFIZ2YdQ/YE53XZUZljyx2VmNKcUArT3aMB6LA1Kf7kg2dHPx3FO/eQbUemu/OdYsvTHv1LtZ6ra+BiNQ/VrZ4ovVaB3EhpGLeUNVXT6o8fzTYq4FUo1KmcHFhd2u0ps1TGFtZzAmDvDksRg/V+UQHl5QVcEQhmTwhW88AzKBq3nVIpG+jbixfmFd8Y8AklMRavep1PiJ7PZYgRDjEPQIJOVi7ev7g8gdJWYNu2Wv1NVEorjbVXqRGZjPaUeU2SkNLliJa6vRmm8NPudJm/5z+FTO/RqaXIJ5Oiu1WuPWSlqiG5SDVY5UetUq1jG5YmGS7JITbYkwm+8=
+    secure: WVbL9LXCP1O4HseXs6cpkA776MU3Eoeptm1ZX15CNxARjubUcDkR2pI0MnlaeskpSpXeEUejLeikOjwRwqdN7/5v3jASRXWhypqzPnYP9x5EWXWa5QIBtNiacRTJXRxuFTT2zR+8K7q0RFlx0rasi2kUYiJliF6S26j9beKyCbg0YiRTDtsZRgZI6fqXAIZLgF/A7Zf95SEftmTI1sHqH+WMQ2nMqHEqiRCp9q7VEcfZhGcaL7acAZvx1MGHCJ61tBNputnuM/NzlzpBtlTJeHyLjXaabPWcwYVjjdey+176KZ6jTo2VuwHbqm8Zn4WEXEaZAfxq2OZJVf+lvkcOeFXOG7t3UbQ+lBnaAZwr3iEo3oa5veYSr6cDHstr7ZsYR3FV6fdzLYW8Jw69UdmMVJ0kmWydncpAl2gFUQJK52YznSIKM02Cy92g0ktOQ515+NrzVZplmBt+sYmf6pdvznEWhOj6Ur3hxTL6jqd3d2IkKi4/dL7YLqGnmTpjcP7Hsj6aXRQ+ANXvPMc8D40BykiRV/pdApFJLzVhbPtP5pvkjEakM5OlTiUPh5x34QY2qZQ2HC16E202uKyzAlbhlfJSXmg7omt833bqVNE340Dq36CwjKI8t9NICCKwiOrQVj5SfgkutrPB/4j04j8lm/aRDKlbAK66PoWmNJk9xgI=
   on:
     tags: true
     repo: misaka-ink/error-handler
