@@ -1,4 +1,5 @@
 # error-handler 
+[![Build Status](https://travis-ci.org/misaka-ink/error-handler.svg?branch=master)](https://travis-ci.org/misaka-ink/error-handler)
 
 Handling server error message
 
