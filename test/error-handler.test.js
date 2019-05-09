@@ -42,6 +42,10 @@ app.use(async ctx => {
     else if (ctx.url === '/status') {
         ctx.status = 401
     }
+    else if (ctx.url === '/succ') {
+        ctx.status = 200
+        ctx.body = "success"
+    }
 })
 
 let server
@@ -59,17 +63,29 @@ afterAll(async done => {
 })
 
 describe('use fetch2 error-handler middleware', function () {
+    test('should return normal result', async () => {
+        const result = await f2.request('http://localhost:3000/succ')
+        return expect(result).toEqual('success')
+    })
+
     test('should return mapping error message of `body` when processing error', async () => {
-        try {
-            const result = await f2.request('http://localhost:3000/body')
-            return expect(result).toEqual(mapKV.body['100001'])
-        } catch (e) {
-            throw e
-        }
+        const result = await f2.request('http://localhost:3000/body')
+        return expect(result).toEqual(mapKV.body['100001'])
     })
 
     test('should return mapping error message of `status code` when processing error', async () => {
         const result = await f2.request('http://localhost:3000/status')
         return expect(result).toEqual(mapKV.status['401'])
+    })
+
+    test('should return mapping error message in target field', async () => {
+        const f2 = new fetch2()
+        f2.use(errorhandler({
+            errorPath: 'code',
+            map: mapKV,
+            errorField: 'errorMsg'
+        }))
+        const result = await f2.request('http://localhost:3000/body')
+        return expect(result['errorMsg']).toEqual(mapKV.body['100001'])
     })
 })

@@ -34,13 +34,17 @@ const errorMapping = {
 
 // use middleware
 f2.use(
-    errorhandler(
+    errorhandler({
         // error code or message path of `body`
-        'code', 
+        errorPath: 'code', 
         
         // error mapping
-        errorMapping
-    )
+        map: errorMapping,
+        
+        // error filed - response['errorMsg']
+        errorField: 'errorMsg'
+        
+    })
 )
 
 // Todo -> request
