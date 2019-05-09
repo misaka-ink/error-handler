@@ -1,0 +1,18 @@
+os: osx
+dist: trusty
+language: node_js
+node_js: v10
+install:
+  - npm i
+script:
+  - npm test
+  - npm run build
+deploy:
+  provider: npm
+  email: smilingxinyi@gmail.com
+  skip_cleanup: true
+  api_key:
+    secure: Fo4w+bX/jso2yR6IihyazZ6yoXZs1vAuqvcjRTeJoVHHkv2SmkSlnw1oH/VNEFxZUuyC6umJ7mACBTi43kT+gkJfFjqqhak2X2Orla7ensBJgyrER3nVoKwzHvVqszCT/C9ZNPW18/SKV5r4dcTok9O76/Qsz9Uq/FVlLwqlxyAtva7DJzgE7unxGHVyI0uZg0Q+SpP/04Zrjo7dEMjlwA7Qbit05MvuL7sp+fWL91GqL62sKQdGgTfsQs4Ul1M7xDI64GJcdZYQWmd88IHJs90a73oKEucKKD1qTrOf0Ql7M0ZTggniB1ACEYvgSfGXjVpjW5SVynwM6IwKMgnncypVSPWhFFMgnukvV+xgsB6IKrB97pWKfErmR4O6uBZmDfcetpTSZsrX5JKWJ0/q3uDu73eOFIBUTQt6NXDmSBSHjJo8E8ziqALBxAMAbBTIFN+1PnT9IWlOatvDG8tuEn+Iezsxwd7DefHZ4ZoRFErvPH2jDocawXFBH/Hp9Mvr8o+7KS0++6oU9MF9fWpvjl3XVWx14VVG6KuP3TK4WNmjKRJHDnX1geBMkAvLRV7zvLLNtfz1wSqyCUggYrSo5cuV9bz/0EYQPeR8f0tGFVgHA8rNnDw2c15XGc0eM3O5OSSqkzh7r1ZOCoEaSxi0d8TKooQ/Dt/36HvNF6sAVrw=
+  on:
+    tags: true
+    repo: misaka-ink/error-handler

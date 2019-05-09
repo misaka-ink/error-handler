@@ -2,7 +2,6 @@
 
 Handling server error message
 
-
 ## Examples
 
 ```javascript
