@@ -35,5 +35,14 @@
         "webpack": "^4.30.0",
         "webpack-cli": "^3.3.2",
         "webpack-merge": "^4.2.1"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "jest": {
+        "coveragePathIgnorePatterns": [
+            "/node_modules/",
+            "/test/"
+        ]
     }
 }
