@@ -9,7 +9,7 @@ import fetch2 from '@misaka.ink/fetch2'
 
 const mapKV = {
     status: {
-        401: 'unauthorized'
+        204: 'it\' ok'
     },
     body: {
         100001: 'error message'
@@ -40,7 +40,7 @@ app.use(async ctx => {
         }
     }
     else if (ctx.url === '/status') {
-        ctx.status = 401
+        ctx.status = 204
     }
     else if (ctx.url === '/succ') {
         ctx.status = 200
@@ -75,8 +75,10 @@ describe('use fetch2 error-handler middleware', function () {
 
     test('should return mapping error message of `status code` when processing error', async () => {
         const result = await f2.request('http://localhost:3000/status')
-        return expect(result).toEqual(mapKV.status['401'])
+        return expect(result).toEqual(mapKV.status['204'])
     })
+
+    test('')
 
     test('should return mapping error message in target field', async () => {
         const f2 = new fetch2()

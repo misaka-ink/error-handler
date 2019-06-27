@@ -1,7 +1,22 @@
 # error-handler 
 [![Build Status](https://travis-ci.org/misaka-ink/error-handler.svg?branch=master)](https://travis-ci.org/misaka-ink/error-handler)
 
-Handling server error message
+Handling server error message when status code is `2xx`
+
+looks like...
+
+```javascript
+
+// response status code is 2xx
+// error message in response
+
+const result = {
+    code: 'xxxxxxx',
+    msg: 'error message',
+    data: {} // error data
+}
+
+```
 
 ## Examples
 
@@ -17,7 +32,6 @@ const f2 = fetch2.getInstance()
 // body: response data
 const errorMapping = {
     status: {
-        401: 'unauthorized'
     },
     body: {
         100001: 'error message'        
