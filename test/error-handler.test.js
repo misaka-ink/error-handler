@@ -78,8 +78,6 @@ describe('use fetch2 error-handler middleware', function () {
         return expect(result).toEqual(mapKV.status['204'])
     })
 
-    test('')
-
     test('should return mapping error message in target field', async () => {
         const f2 = new fetch2()
         f2.use(errorhandler({
